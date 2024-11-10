@@ -48,7 +48,6 @@ def intValidation(num):
     while not (num.isdigit() and int(num) >= 0):
         print("Invalid Entry. Please try again.")
         num = input("Enter Quantity On-Hand: ")
-    return int(num) 
 
 
 def main():
