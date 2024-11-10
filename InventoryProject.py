@@ -30,9 +30,14 @@ def printMenu():
     print("*                                             *")
     print("***********************************************")
 
-def stringValidation(word):
+def stringValidation(word, type):
     while not word.len() > 1:
         print("Invalid Entry. Please try again.")
+        if type == "Category":
+            word = input("Enter Category: ")
+        elif type == "Model":
+            word = input("Enter Model Number: ")
+        
 
 def intValidation(num):
     while not (num.isdigit() and int(num) >= 0):
