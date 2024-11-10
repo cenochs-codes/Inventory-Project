@@ -6,10 +6,15 @@ InvList = [["Memory", "G.Skill", "DDR4-3200-16GB", 46], ["Power Supply", "Corsai
 
 #We will need to define a function for printing the inventory
 def printInventory(list):
+    print()
+    print("Current Inventory:")
+    print("------------------")
     for item in list:
         for i in item:
             print(i, end=' ')
         print()
+    print()
+    input("Press any key to continue ")
 
 def addItemToInventory(list):
     pass
