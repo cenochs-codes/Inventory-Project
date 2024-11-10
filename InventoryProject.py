@@ -1,3 +1,10 @@
+# NAMES
+# PROJECT TITLE
+# DATE
+# PROJECT FUNCTION
+# DEVELOPED USING...
+
+
 #constants declaration
 VALID_CHOICES = ["P", "A", "S", "X"]
 
@@ -16,15 +23,28 @@ def printInventory(list):
     print()
     input("Press any key to continue ")
 
+
 def addItemToInventory(list):
-    pass
+    category = stringValidation(input("Enter Category: "), "Category")
+    brand = stringValidation(input("Enter Brand: "), "Brand")
+    model_num = stringValidation(input("Enter Model Number: "), "Model")
+    quantity = intValidation(input("Enter Quantity On-Hand: "))
+
+    new_item = [category, brand, model_num, quantity]
+    InvList.append(new_item)
+
+    input("Item Added. Press any key to continue ")
+
 
 def sortInventory(list):
-    pass
+    list.sort()
+    print("The inventory list is sorted")
+    input("Press any key to continue ")
+
 
 #Create the UI for the program
 def printMenu():
-    print("***********************************************")
+    print("*" * 47)
     print("*                                             *")
     print("*           INVENTORY MANAGEMENT              *")
     print("*                                             *")
@@ -33,21 +53,28 @@ def printMenu():
     print("*           (S)ort Inventory by Category      *")
     print("*          E(X)it Program                     *")
     print("*                                             *")
-    print("***********************************************")
+    print("*" * 47)
+
 
 def stringValidation(word, type):
-    while not word.len() > 1:
+    while not len(word) > 0:
         print("Invalid Entry. Please try again.")
         if type == "Category":
             word = input("Enter Category: ")
+        elif type == "Brand":
+            word = input("Enter Brand: ")
         elif type == "Model":
             word = input("Enter Model Number: ")
+
+    return word
         
 
 def intValidation(num):
     while not (num.isdigit() and int(num) >= 0):
         print("Invalid Entry. Please try again.")
         num = input("Enter Quantity On-Hand: ")
+
+    return num
 
 
 def main():
@@ -69,10 +96,9 @@ def main():
             sortInventory(InvList)
         elif user_choice == "X":
             running = False
-     
-main()
 
-# Test Comment
+
+main()
 
 
 
