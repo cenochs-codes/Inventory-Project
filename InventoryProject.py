@@ -6,7 +6,10 @@ InvList = [["Memory", "G.Skill", "DDR4-3200-16GB", 46], ["Power Supply", "Corsai
 
 #We will need to define a function for printing the inventory
 def printInventory(list):
-    pass
+    for item in list:
+        for i in item:
+            print(i, end=' ')
+        print()
 
 def addItemToInventory(list):
     pass
@@ -28,10 +31,15 @@ def printMenu():
     print("***********************************************")
 
 def stringValidation(word):
-    pass
+    while not word.len() > 1:
+        print("Invalid Entry. Please try again.")
 
 def intValidation(num):
-    pass
+    while not (num.isdigit() and int(num) >= 0):
+        print("Invalid Entry. Please try again.")
+        num = input("Enter Quantity On-Hand: ")
+    return int(num) 
+
 
 def main():
     running = True
