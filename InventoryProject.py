@@ -98,6 +98,7 @@ def main():
         user_choice = user_choice.upper()
         while user_choice not in VALID_CHOICES:
             print("Invalid Menu Choice. Please try again")
+            input("Press any key to continue ")
             printMenu()
             user_choice = input("Select a Menu Choice: ")
             user_choice = user_choice.upper()
@@ -113,6 +114,3 @@ def main():
 
 # Invokes the main function
 main()
-
-
-
