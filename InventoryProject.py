@@ -1,8 +1,8 @@
 # Christian Enochs, Xander Gross
 # Group Project 2
-# DATE
+# November 12, 2024
 # This program adds, sorts, and prints elements in a product inventory.
-# DEVELOPED USING...
+# Developed using Visual Studio Code and GitHub
 
 
 # Constants Delcaration
@@ -102,7 +102,7 @@ def main():
             printMenu()
             user_choice = input("Select a Menu Choice: ")
             user_choice = user_choice.upper()
-        if user_choice.upper() == "P":
+        if user_choice == "P":
             printInventory(InvList)
         elif user_choice == "A":
             addItemToInventory(InvList)
